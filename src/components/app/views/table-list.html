@@ -1,5 +1,10 @@
 <table class="table">
     <thead>
+        <tr ng-if="$ctrl.filter">
+            <th colspan="{{$ctrl.columns.length}}">
+                <input ng-model="$ctrl.filterModel" placeholder="Filter" />
+            </th>
+        </tr>
         <tr>
             <th ng-repeat="column in $ctrl.columns track by $index">
                 {{column[1]}}
@@ -7,7 +12,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in $ctrl.data track by item._id">
+        <tr ng-repeat="item in $ctrl.data |
+            filter: $ctrl.filterModel
+            track by item._id">
             <td ng-repeat="column in $ctrl.columns track by $index">
                 <a ng-if="$index === 0"
                     href="./{{$ctrl.type}}/{{item._id}}/">{{item[column[0]]}}</a>

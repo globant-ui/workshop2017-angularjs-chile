@@ -1,5 +1,7 @@
 import 'angular-route';
 
+
+
 export function routes($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({
         enabled: true,
@@ -11,28 +13,41 @@ export function routes($routeProvider, $locationProvider) {
         .otherwise('/')
         .when('/', {
             templateUrl: '/components/app/views/index.html',
-            // resolve: {
-            //   data: //Implement API call to get bands
-            // },
+            resolve: {
+                data: ApiService => ApiService.getBands()
+            },
         })
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
               artists: ($route, ApiService) =>
                   ApiService.getArtists($route.current.params.bandId),
-              // albums: //Implement API call to get albums
+              albums: ($route, ApiService) =>
+                  ApiService.getAlbums($route.current.params.bandId)
             },
         })
         .when('/band/:bandId/album/:albumId/', {
             templateUrl: '/components/app/views/band-detail.html',
-            // resolve: {
-            //   artists, albums and tracks requests in here
-            // },
+            resolve: {
+              artists: ($route, ApiService) =>
+                  ApiService.getArtists($route.current.params.bandId),
+              albums: ($route, ApiService) =>
+                  ApiService.getAlbums($route.current.params.bandId),
+              tracks: ($route, ApiService) =>
+                  ApiService.getAlbum($route.current.params.albumId),
+            },
         })
         .when('/band/:bandId/album/:albumId/track/:trackId/', {
             templateUrl: '/components/app/views/band-detail.html',
-            // resolve: {
-            //     artists, albums, tracks and comments requests in here
-            // },
+            resolve: {
+                artists: ($route, ApiService) =>
+                    ApiService.getArtists($route.current.params.bandId),
+                albums: ($route, ApiService) =>
+                    ApiService.getAlbums($route.current.params.bandId),
+                tracks: ($route, ApiService) =>
+                    ApiService.getAlbum($route.current.params.albumId),
+                comments: ($route, ApiService) =>
+                    ApiService.getCommentsForTrack($route.current.params.trackId),
+            },
         });
 }
