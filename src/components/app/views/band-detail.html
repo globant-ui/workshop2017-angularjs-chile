@@ -1,0 +1,25 @@
+<div class="band-detail-container">
+    <h1>Band Details</h1>
+    <h2>Artists</h2>
+    <!-- Show artists details here -->
+    <!-- <pre>{{$resolve.artists | json}}</pre> -->
+    <hr />
+
+    <h2>Albums</h2>
+    <!-- Show Albums details here -->
+    <!-- <pre>{{$resolve.albums | json}}</pre> -->
+    <hr />
+
+    <div class="tracks"
+        ng-if="$resolve.tracks">
+        <h2>Tracks in {{$resolve.selectedAlbum.name}}</h2>
+        <!-- Show Tracks from selected album -->
+
+        <div ng-if="$resolve.comments"
+            class="comments">
+            <hr />
+            <!-- Implement comments component -->
+        </div>
+        <!-- <pre>{{$resolve.tracks | json}}</pre> -->
+    </div>
+</div>
