@@ -47,4 +47,35 @@ describe('Pagination Controller', () => {
         expect(controller.currentPage).toEqual(2)
         expect(controller.paginate).not.toBeCalled()
     })
+
+    it('should change to the prev page until the firstPage and call paginate', () => {
+        controller.paginate = jest.fn()
+        controller.currentPage = 2
+
+        controller.prevPage()
+
+        expect(controller.currentPage).toEqual(1)
+        expect(controller.paginate).toBeCalled()
+
+        controller.paginate.mockClear()
+        controller.prevPage()
+
+        expect(controller.currentPage).toEqual(1)
+        expect(controller.paginate).not.toBeCalled()
+    })
+
+    it('should modify the data array based on the current page when paginate it is called', () => {
+        const page1Array = dataSample.slice(0,5)
+        const page2Array = dataSample.slice(5,6)
+
+        controller.currentPage = 1
+        controller.paginate()
+
+        expect(controller.data).toEqual(page1Array)
+
+        controller.currentPage = 2
+        controller.paginate()
+
+        expect(controller.data).toEqual(page2Array)
+    })
 })
