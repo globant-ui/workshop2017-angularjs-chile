@@ -1,10 +1,11 @@
 {
   "name": "globant-workshop-2016",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "webpack-dev-server",
     "dev": "npm start -- --watch",
-    "test": "NODE_PATH=./src jest --coverage --verbose",
+    "test": "jest --coverage --verbose",
+    "tdd": "jest --watch --verbose",
     "prebuild": "mkdir tmp; cp -R ./src ./tmp",
     "build": "webpack",
     "check-coverage": "npm test && http-server -s -p 9000 coverage/lcov-report",
@@ -43,7 +44,7 @@
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/test/jest.init.js",
     "collectCoverageFrom": [
-      "src/*.js"
+      "src/**/*.js"
     ],
     "coverageThreshold": {
       "global": {
