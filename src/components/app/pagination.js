@@ -1,11 +1,11 @@
-export class PaginationController {
+class PaginationController {
     originalData = [];
     currentPage = 1;
     lastPage = null;
     pageSize = 10;
 
     constructor () {
-        console.log('PaginationController this.data', this.data);
+        console.log('PaginationController this.data', this);
         this.originalData = this.data.length ? this.data : this.originalData;
         this.pageSize = this.size || this.pageSize;
         this.lastPage = Math.ceil(this.originalData.length / this.pageSize);
@@ -38,8 +38,7 @@ export class PaginationController {
         let end = this.currentPage * this.pageSize;
 
         this.data = this.originalData.slice(start, end);
-        console.debug('PaginationController.paginate',
-            this.currentPage, this.lastPage, this.data);
+        console.debug('PaginationController.paginate', this.currentPage, this.lastPage, this.data);
     }
 }
 

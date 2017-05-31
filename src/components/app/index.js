@@ -8,7 +8,8 @@ import {ApiService} from './services';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-angular.module('App', ['ngRoute'])
+angular
+    .module('App', ['ngRoute'])
     .config(routes)
     .service('ApiService', ApiService)
     .component('tableList', TableListComponent)
