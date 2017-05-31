@@ -5,8 +5,7 @@ class PaginationController {
     pageSize = 10;
 
     constructor () {
-        console.log('PaginationController this.data', this);
-        this.originalData = this.data.length ? this.data : this.originalData;
+        this.originalData = this.data || this.originalData;
         this.pageSize = this.size || this.pageSize;
         this.lastPage = Math.ceil(this.originalData.length / this.pageSize);
     }
@@ -38,16 +37,15 @@ class PaginationController {
         let end = this.currentPage * this.pageSize;
 
         this.data = this.originalData.slice(start, end);
-        console.debug('PaginationController.paginate', this.currentPage, this.lastPage, this.data);
     }
 }
 
-export const PaginationComponent = {
+export default {
   templateUrl: '/components/app/views/pagination.html',
   controller: PaginationController,
   controllerAs: '$ctrl',
   bindings: {
       data: '=',
       size: '<',
-  },
+  }
 }
