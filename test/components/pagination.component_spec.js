@@ -1,4 +1,4 @@
-import PaginationComponent from '../../src/components/app/pagination'
+import { PaginationComponent } from '../../src/components/app/pagination'
 
 describe('Pagination Controller', () => {
 

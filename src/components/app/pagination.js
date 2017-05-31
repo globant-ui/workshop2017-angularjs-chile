@@ -40,7 +40,7 @@ class PaginationController {
     }
 }
 
-export default {
+export const PaginationComponent = {
   templateUrl: '/components/app/views/pagination.html',
   controller: PaginationController,
   controllerAs: '$ctrl',
