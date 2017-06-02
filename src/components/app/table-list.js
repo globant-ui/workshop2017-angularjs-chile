@@ -1,7 +1,7 @@
 export class TableListController {
     columns = [];
 
-    constructor ($scope, $element, $attrs) {
+    constructor ($attrs) {
         this.columns = $attrs.columns
             .split(/\s*,\s*/).map(item => item.split(/\s*:\s*/));
     }
