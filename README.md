@@ -1,11 +1,19 @@
 ### Workshop 2016 AngularJS
 
+[travis-image]: https://travis-ci.org/gpincheiraa/workshop2016-nodeconfar-angular.png
+[travis-url]: https://travis-ci.org/gpincheiraa/workshop2016-nodeconfar-angular
+
+[coveralls-image]:https://coveralls.io/repos/github/gpincheiraa/workshop2016-nodeconfar-angular/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/gpincheiraa/workshop2016-nodeconfar-angular?branch=master
+
+
+[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url][![Code Climate][codeclimate-image]][codeclimate-url]
 
 #### Requerimientos previos
 
 
 - Computadora con Linux o Windows
-- Git (si estás en Windows usá la consola de Git bash) 
+- Git (si estás en Windows usá la consola de Git bash)
 - Node.js 6.0 o superior
 - npm 3.0 o superior
 
@@ -45,7 +53,7 @@ Con el desarrollo de esta app vas a aprender cómo comunicarte con una api y mos
 │            │   └── api.js         # Llamadas a los correspondientes endpoints para conseguir data
 │            │── /views             # HTML de los templates de cada componente y pagina
 │            │── index.js           
-│            └── routes.js          # Rutas para cada pagina y llamadas a su correspondiente endpoint 
+│            └── routes.js          # Rutas para cada pagina y llamadas a su correspondiente endpoint
 └── package.json        
 ```
 
@@ -61,13 +69,13 @@ Usamos la clase ApiService que contiene:
 
 
 Cada llamada usa una estructura similar a esta:
- 
+
 ```
     getSomething(parameter1) {
         return this.http.get(`${this.url}/endpoint/${parameter1}`)
                     .then(response => response.data);
-    } 
-   
+    }
+
 ```
 ##### Router
 
@@ -88,7 +96,7 @@ Estructura de rutas
 Luego en nuestro template podremos acceder a la data conseguida del server de la siguiente forma:
 
 
-(Asumiendo que characters es un array con la siguiente estructura: 
+(Asumiendo que characters es un array con la siguiente estructura:
 ```
 [{title: 'Mike'}, {title: 'Eleven'}, {title: 'Dustin'}, {title: 'Lucas'}, {title: 'Will'}])
 ```
@@ -96,7 +104,7 @@ Luego en nuestro template podremos acceder a la data conseguida del server de la
 
 ```
     <h1>Stranger Things Characters:</h1>
-    <ul> 
+    <ul>
         <li ng-repeat="item in $resolve.characters">
             {{item.title}}
         </li>

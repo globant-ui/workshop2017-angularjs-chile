@@ -13,9 +13,8 @@ export class CommentsController {
           name: 'placeholder',
           trackId: this.routeParams.trackId,
       })
-      .then(response => {
+      .then(() => {
           this.route.reload();
-          return response.data;
       });
     }
 }

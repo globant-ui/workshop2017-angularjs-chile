@@ -1,6 +1,9 @@
 module.exports = {
-    entry: ['core-js/shim', 'angular', './src/index.js'],
-    // entry: './src/index.js',
+    entry: [
+      'core-js/shim',
+      'angular',
+      './src/index.js'
+    ],
     output: {
         path: 'tmp',
         filename: 'index.bundle.js'
