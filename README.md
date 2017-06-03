@@ -3,8 +3,8 @@
 [travis-image]: https://travis-ci.org/gpincheiraa/workshop2016-nodeconfar-angular.png
 [travis-url]: https://travis-ci.org/gpincheiraa/workshop2016-nodeconfar-angular
 
-[coveralls-image](https://coveralls.io/repos/github/gpincheiraa/workshop2016-nodeconfar-angular/badge.svg?branch=master)]
-[coveralls-url](https://coveralls.io/github/gpincheiraa/workshop2016-nodeconfar-angular?branch=master)
+[coveralls-image]:https://coveralls.io/repos/github/gpincheiraa/workshop2016-nodeconfar-angular/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/gpincheiraa/workshop2016-nodeconfar-angular?branch=master
 
 
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url][![Code Climate][codeclimate-image]][codeclimate-url]
