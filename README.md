@@ -6,6 +6,8 @@
 [coveralls-image]:https://coveralls.io/repos/github/gpincheiraa/workshop2016-nodeconfar-angular/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/gpincheiraa/workshop2016-nodeconfar-angular?branch=master
 
+[codeclimate-image]: https://codeclimate.com/github/gpincheiraa/workshop2016-nodeconfar-angular/badges/gpa.svg
+[codeclimate-url]: https://codeclimate.com/github/gpincheiraa/workshop2016-nodeconfar-angular
 
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url][![Code Climate][codeclimate-image]][codeclimate-url]
 
