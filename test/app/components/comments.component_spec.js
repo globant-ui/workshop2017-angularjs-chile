@@ -17,9 +17,9 @@ describe('Comments Controller', () => {
 
     beforeEach(inject(($componentController, $routeParams, $route, ApiService) => {
         const deps = {
-          $routeParams: $routeParams,
-          $route: $route,
-          ApiService: ApiService
+          $routeParams,
+          $route,
+          ApiService
         }
         $routeParams.trackId = trackId
         controller = $componentController('comments', deps, {
@@ -27,21 +27,21 @@ describe('Comments Controller', () => {
         })
     }))
 
-    it('should call Api service and reload route on submit', () => {
+    it('should call Api service and reload route on submit', inject(($rootScope) => {
         const expectedComment = {
           message: 'Excelent',
           name: 'placeholder',
           trackId: trackId
         }
-
-        //jest.spyOn(controller.route, 'reload')
         jest.spyOn(controller.ApiService, 'postCommentForTrack').mockReturnValueOnce(Promise.resolve())
+        jest.spyOn(controller.route, 'reload')
 
         controller.commentField = expectedComment.message
         controller.onSubmit()
 
-        //expect(controller.route.reload).toBeCalled()
-        expect(controller.ApiService.postCommentForTrack).toBeCalledWith(expectedComment)
-
-    })
+        $rootScope.$digest(() => {
+            expect(controller.ApiService.postCommentForTrack).toBeCalledWith(expectedComment)
+            expect(controller.route.reload).toBeCalled()
+        })
+    }))
 })
