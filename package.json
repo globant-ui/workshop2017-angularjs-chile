@@ -8,7 +8,7 @@
     "tdd": "NODE_PATH=./src jest --watch --verbose",
     "prebuild": "mkdir tmp; cp -R ./src ./tmp",
     "build": "webpack",
-    "check-coverage": "npm test | http-server -s -p 9000 coverage/lcov-report",
+    "check-coverage": "npm test | http-server -so -p 9000 coverage/lcov-report",
     "mock": "node server-mock.js"
   },
   "dependencies": {
