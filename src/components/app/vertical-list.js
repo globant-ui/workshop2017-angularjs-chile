@@ -4,5 +4,5 @@ export const VerticalListComponent = {
         data: '=',
         paginate: '@?',
         type: '@',
-    },
+    }
 }

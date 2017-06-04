@@ -1,5 +1,5 @@
-export class CommentsController {
-    commentField = '';
+class CommentsController {
+    commentField = ''
 
     constructor ($routeParams, $route, ApiService) {
         this.routeParams = $routeParams;
@@ -24,6 +24,6 @@ export const CommentsComponent = {
     controller: CommentsController,
     controllerAs: '$ctrl',
     bindings: {
-        data: '=',
+        data: '='
     }
 }

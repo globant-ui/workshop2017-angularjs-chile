@@ -1,24 +1,33 @@
 <div class="band-detail-container">
-    <h1>Band Details</h1>
-    <h2>Artists</h2>
-    <!-- Show artists details here -->
+    <h1>Band Detail</h1>
+
+    <vertical-list paginate="3"
+        type="artist"
+        data="$resolve.artists"></vertical-list>
     <!-- <pre>{{$resolve.artists | json}}</pre> -->
     <hr />
 
+
     <h2>Albums</h2>
-    <!-- Show Albums details here -->
-    <!-- <pre>{{$resolve.albums | json}}</pre> -->
+    <vertical-list paginate="3"
+        type="album"
+        data="$resolve.albums"></vertical-list>
     <hr />
+    <!-- <pre>{{$resolve.data.albums | json}}</pre> -->
+
 
     <div class="tracks"
         ng-if="$resolve.tracks">
         <h2>Tracks in {{$resolve.selectedAlbum.name}}</h2>
-        <!-- Show Tracks from selected album -->
+        <table-list type="track"
+            columns="name:Name, track_number:Track #, duration_ms:Length, commentsCount:Comments"
+            data="$resolve.tracks">
+        </table-list>
 
         <div ng-if="$resolve.comments"
             class="comments">
             <hr />
-            <!-- Implement comments component -->
+            <comments data="$resolve.comments"></comments>
         </div>
         <!-- <pre>{{$resolve.tracks | json}}</pre> -->
     </div>

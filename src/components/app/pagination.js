@@ -1,8 +1,8 @@
 class PaginationController {
-    originalData = [];
-    currentPage = 1;
-    lastPage = null;
-    pageSize = 10;
+    originalData = []
+    currentPage = 1
+    lastPage = null
+    pageSize = 10
 
     constructor () {
         this.originalData = this.data || this.originalData;
@@ -46,6 +46,6 @@ export const PaginationComponent = {
   controllerAs: '$ctrl',
   bindings: {
       data: '=',
-      size: '<',
+      size: '<'
   }
 }
