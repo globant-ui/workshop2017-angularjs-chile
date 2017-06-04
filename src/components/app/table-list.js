@@ -1,5 +1,7 @@
-export class TableListController {
-    columns = [];
+class TableListController {
+    columns = []
+    filter = false
+    filterModel = ''
 
     constructor ($attrs) {
         this.columns = $attrs.columns
