@@ -1,11 +1,9 @@
-export class TableListController {
-    columns = [];
+class TableListController {
+    columns = []
+    filter = false
+    filterModel = ''
 
-    filter = false;
-    filterModel = '';
-
-
-    constructor ($scope, $element, $attrs) {
+    constructor ($attrs) {
         this.columns = $attrs.columns
             .split(/\s*,\s*/).map(item => item.split(/\s*:\s*/));
         // REMOVE: out of the final version exercise
