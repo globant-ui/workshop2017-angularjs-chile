@@ -3,6 +3,7 @@ import { ApiService } from 'components/app/services'
 
 describe('Comments Controller', () => {
 
+    let rootScopeService
     let controller
     let trackId = '0021456'
 
@@ -15,19 +16,20 @@ describe('Comments Controller', () => {
 
     beforeEach(angular.mock.module('Test'))
 
-    beforeEach(inject(($componentController, $routeParams, $route, ApiService) => {
+    beforeEach(inject(($rootScope, $componentController, $routeParams, $route, ApiService) => {
         const deps = {
           $routeParams,
           $route,
           ApiService
         }
+        rootScopeService = $rootScope
         $routeParams.trackId = trackId
         controller = $componentController('comments', deps, {
             data: []
         })
     }))
 
-    it('should call Api service and reload route on submit', inject(($rootScope) => {
+    it('should call Api service and reload route on submit', async () => {
         const expectedComment = {
           message: 'Excelent',
           name: 'placeholder',
@@ -37,11 +39,9 @@ describe('Comments Controller', () => {
         jest.spyOn(controller.route, 'reload')
 
         controller.commentField = expectedComment.message
-        controller.onSubmit()
+        await controller.onSubmit()
 
-        $rootScope.$digest(() => {
-            expect(controller.ApiService.postCommentForTrack).toBeCalledWith(expectedComment)
-            expect(controller.route.reload).toBeCalled()
-        })
-    }))
+        expect(controller.ApiService.postCommentForTrack).toBeCalledWith(expectedComment)
+        expect(controller.route.reload).toBeCalled()
+    })
 })

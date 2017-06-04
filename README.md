@@ -9,7 +9,7 @@
 [codeclimate-image]: https://codeclimate.com/github/gpincheiraa/workshop2016-nodeconfar-angular/badges/gpa.svg
 [codeclimate-url]: https://codeclimate.com/github/gpincheiraa/workshop2016-nodeconfar-angular
 
-[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url][![Code Climate][codeclimate-image]][codeclimate-url]
+[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Code Climate][codeclimate-image]][codeclimate-url]
 
 #### Requerimientos previos
 
