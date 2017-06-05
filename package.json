@@ -51,7 +51,8 @@
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/index.js",
-      "<rootDir>/src/components/app/index.js"
+      "<rootDir>/src/components/app/index.js",
+      "<rootDir>/src/components/app/vertical-list.js"
     ],
     "coverageThreshold": {
       "global": {
