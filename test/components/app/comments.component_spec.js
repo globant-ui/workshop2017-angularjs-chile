@@ -1,9 +1,7 @@
-import { CommentsComponent } from 'components/app/comments'
-import { ApiService } from 'components/app/services'
+import { CommentsComponent } from 'components/app/comments'
+import { ApiService } from 'components/app/services'
 
 describe('Comments Controller', () => {
-
-    let rootScopeService
     let controller
     let trackId = '0021456'
 
@@ -22,7 +20,6 @@ describe('Comments Controller', () => {
           $route,
           ApiService
         }
-        rootScopeService = $rootScope
         $routeParams.trackId = trackId
         controller = $componentController('comments', deps, {
             data: []

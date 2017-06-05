@@ -1,10 +1,7 @@
-import { ApiService } from 'components/app/services'
+import { ApiService } from 'components/app/services'
 
 describe('Api Service', () => {
-
     let ApiServiceInstance
-    let httpService
-    let rootScopeService
 
     beforeAll(() => {
         angular
@@ -14,9 +11,7 @@ describe('Api Service', () => {
 
     beforeEach(angular.mock.module('Test'))
 
-    beforeEach(inject(($rootScope, $http, ApiService) => {
-        rootScopeService = $rootScope
-        httpService = $http
+    beforeEach(inject((ApiService) => {
         ApiServiceInstance = ApiService
     }))
 
@@ -136,7 +131,6 @@ describe('Api Service', () => {
     })
 
     it('should post data on postCommentForTrack calling "url/comments" endpoint', async () => {
-        const trackId = "6745"
         const expectedUrl = `${ApiServiceInstance.url}/comments`
         const postData = {
           trackId: "6745",

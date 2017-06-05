@@ -1,8 +1,7 @@
-import {routes} from 'components/app/routes'
-import { ApiService } from 'components/app/services'
+import { routes} from 'components/app/routes'
+import { ApiService } from 'components/app/services'
 
 describe('Routes Config', () => {
-
     let rootScopeService
     let locationService
     let ApiServiceMock

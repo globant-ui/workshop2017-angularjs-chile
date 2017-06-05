@@ -1,7 +1,6 @@
-import { VerticalListComponent } from 'components/app/vertical-list'
+import { VerticalListComponent } from 'components/app/vertical-list'
 
 describe('Vertical List Component', () => {
-
     beforeAll(() => {
         angular
           .module('Test', [])
@@ -9,12 +8,4 @@ describe('Vertical List Component', () => {
     })
 
     beforeEach(angular.mock.module('Test'))
-
-    beforeEach(inject(($componentController) => {
-
-    }))
-
-    it('', () => {
-        
-    })
 })
