@@ -1,7 +1,6 @@
-import { TableListComponent } from 'components/app/table-list'
+import { TableListComponent } from 'components/app/table-list'
 
 describe('Table List Controller', () => {
-
     let controller
     let columns = "name:Name, foundedDate:Founded, endDate:Ended"
 

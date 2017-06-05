@@ -1,7 +1,6 @@
-import { PaginationComponent } from 'components/app/pagination'
+import { PaginationComponent } from 'components/app/pagination'
 
 describe('Pagination Controller', () => {
-
     let controller
     let dataSample = [
       {name: 'Miles'},

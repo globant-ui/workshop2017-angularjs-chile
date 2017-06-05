@@ -13,7 +13,8 @@
   },
   "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 2017
   },
   "globals": {
     "angular": true,
