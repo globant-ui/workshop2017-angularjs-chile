@@ -32,13 +32,12 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-
-
-node_modules/
 bower_components/
 coverage/
+dist/
+node_modules/
+tmp/
 .sass-cache/
 .idea/
 .tmp/
-tmp
-dist/
+.evaluation/
