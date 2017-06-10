@@ -5,6 +5,7 @@
     "start": "webpack-dev-server",
     "dev": "npm start -- --watch",
     "test": "cross-env NODE_PATH=./src jest --coverage --verbose",
+    "test-ci": "mkdir -p .evaluation; cross-env NODE_PATH=./src jest --coverage --verbose --json --outputFile=.evaluation/evaluation.json",
     "tdd": "cross-env NODE_PATH=./src jest --watch --verbose",
     "prebuild": "mkdir tmp; cp -R ./src ./tmp",
     "build": "webpack",
