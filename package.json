@@ -2,7 +2,7 @@
   "name": "globant-workshop-2016",
   "version": "0.0.2",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --hot",
     "dev": "npm start -- --watch",
     "test": "cross-env NODE_PATH=./src jest --coverage --verbose",
     "test-ci": "mkdir -p .evaluation; cross-env NODE_PATH=./src jest --coverage --verbose --json --outputFile=.evaluation/evaluation.json",

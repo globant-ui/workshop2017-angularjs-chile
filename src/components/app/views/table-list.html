@@ -12,12 +12,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in $ctrl.data |
-            filter: $ctrl.filterModel
-            track by item._id">
+        <tr ng-repeat="item in $ctrl.data | filter: $ctrl.filterModel track by item._id">
             <td ng-repeat="column in $ctrl.columns track by $index">
-                <a ng-if="$index === 0"
-                    href="./{{$ctrl.type}}/{{item._id}}/">{{item[column[0]]}}</a>
+                <a ng-if="$index === 0" href="./{{$ctrl.type}}/{{item._id}}/">{{item[column[0]]}}</a>
                 <span ng-if="$index !== 0">{{item[column[0]]}}</span>
             </td>
         </tr>

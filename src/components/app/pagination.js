@@ -4,13 +4,10 @@ class PaginationController {
     lastPage = null
     pageSize = 10
 
-    constructor () {
+    $onInit() {
         this.originalData = this.data || this.originalData;
         this.pageSize = this.size || this.pageSize;
         this.lastPage = Math.ceil(this.originalData.length / this.pageSize);
-    }
-
-    $onInit() {
         this.paginate();
     }
 

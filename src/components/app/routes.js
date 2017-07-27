@@ -13,7 +13,7 @@ export function routes($routeProvider, $locationProvider) {
             templateUrl: '/components/app/views/index.html',
             resolve: {
                 data: ApiService => ApiService.getBands()
-            },
+            }
         })
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',

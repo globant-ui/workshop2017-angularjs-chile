@@ -1,5 +1,6 @@
 module.exports = {
     entry: [
+      'webpack/hot/dev-server',
       'core-js/shim',
       'angular',
       './src/index.js'
@@ -18,7 +19,7 @@ module.exports = {
         { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }]
     },
     cache: true,
-    devtool: 'cheap-module-source-map',
+    devtool: 'eval-source-map',
     devServer: {
         filename: "index.bundle.js",
         contentBase: "./src",
