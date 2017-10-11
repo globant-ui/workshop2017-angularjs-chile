@@ -1,4 +1,4 @@
-### Workshop 2016 AngularJS
+### Globant Workshop 2017 AngularJS
 
 [travis-image]: https://travis-ci.org/gpincheiraa/workshop2016-nodeconfar-angular.png
 [travis-url]: https://travis-ci.org/gpincheiraa/workshop2016-nodeconfar-angular
